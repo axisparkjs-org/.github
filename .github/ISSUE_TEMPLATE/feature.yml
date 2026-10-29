@@ -1,0 +1,45 @@
+name: Feature
+description: Propose a new feature
+title: '[Feature] '
+labels: ['feature']
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What the feature does in a few sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why it is needed and which use cases it solves.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed changes
+      description: How the feature could be implemented or used. Code examples are welcome.
+      value: |
+        ### 1.
+
+        -
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: considerations
+    attributes:
+      label: Considerations / open questions
+      description: Breaking changes, alternatives you considered or decisions that need discussion.
+    validations:
+      required: false

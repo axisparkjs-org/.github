@@ -1,0 +1,36 @@
+name: Update
+description: Improve or update existing code, tooling or configuration
+title: '[Update] '
+labels: ['update']
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be improved or updated and why.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: Proposed changes
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      value: |
+        -
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / next steps
+      value: |
+        - [ ]
+    validations:
+      required: false

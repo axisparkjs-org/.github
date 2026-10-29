@@ -10,8 +10,10 @@
   The Ultimate <a href="https://nodejs.org" target="_blank">Node.js</a> Framework
 </p>
 <div align="center">
-  
-[![License](https://img.shields.io/badge/License-Apache%202.0-0406BD?style=flat-square&labelColor=EBEDF0)](https://www.apache.org/licenses/LICENSE-2.0)
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-0406BD?style=flat-square&labelColor=EBEDF0)](https://github.com/axisparkjs/axispark/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/@axisparkjs/core?style=flat-square&labelColor=EBEDF0&color=0406BD&label=npm)](https://www.npmjs.com/org/axisparkjs)
+[![Docs](https://img.shields.io/badge/Docs-axisparkjs.github.io-0406BD?style=flat-square&labelColor=EBEDF0)](https://axisparkjs.github.io/axispark/)
 
 </div>
 
@@ -27,17 +29,45 @@ AxiSpark.js focuses on simplicity, clarity, and scalability, giving developers t
 
 ## Getting Started
 
-To get started with AxiSpark.js, checkout the [official documentation](https://axisparkjs.github.io/axispark/docs/intro).
+Create a new project with the AxiSpark CLI:
 
-## Support
-AxiSpark.js is an open-source project and we welcome contributions from the community. If you encounter any issues or have questions, please reach out to us via our [GitHub repository](https://github.com/axisparkjs/axispark/issues).
+```bash
+npm install -g @axisparkjs/cli
+axispark create my-app
+```
 
-### Contributors 
-Contributors are welcome! If you would like to contribute to AxiSpark.js, please read our [contributing guidelines](https://github.com/axisparkjs/axispark/blob/main/CONTRIBUTING.md) for more information.
+Then follow the [official documentation](https://axisparkjs.github.io/axispark/docs/intro).
 
-### Contact
-If you have any questions or need assistance, please contact me at pablogalvez31@gmail.com 
+## Packages
+
+Everything is a plugin: install only what your application needs. All packages live in the [axispark](https://github.com/axisparkjs/axispark) monorepo.
+
+| Area | Packages |
+| --- | --- |
+| Core | `@axisparkjs/core`, `@axisparkjs/common`, `@axisparkjs/di`, `@axisparkjs/engine`, `@axisparkjs/logger` |
+| HTTP | `@axisparkjs/http`, `@axisparkjs/http-express`, `@axisparkjs/http-fastify`, `@axisparkjs/openapi` |
+| Security | `@axisparkjs/security` |
+| WebSocket | `@axisparkjs/websocket`, `@axisparkjs/websocket-socketio` |
+| Data & messaging | `@axisparkjs/data`, `@axisparkjs/kafka`, `@axisparkjs/rabbitmq` |
+| Scheduling | `@axisparkjs/schedule` |
+| Architecture | `@axisparkjs/ddd` |
+| Tooling | `@axisparkjs/cli`, `@axisparkjs/test` |
+
+## Repositories
+
+| Repository | Description |
+| --- | --- |
+| [axispark](https://github.com/axisparkjs/axispark) | Framework packages, CLI templates, samples and documentation website. |
+| [.github](https://github.com/axisparkjs/.github) | Organization profile, community health files and issue templates. |
+
+## Contributing
+
+Contributors are welcome! Read the [contributing guidelines](https://github.com/axisparkjs/.github/blob/main/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/axisparkjs/.github/blob/main/CODE_OF_CONDUCT.md) before getting started.
+
+- 🐛 Found a bug or missing a feature? [Open an issue](https://github.com/axisparkjs/axispark/issues/new/choose).
+- 🔒 Found a security vulnerability? Follow the [Security Policy](https://github.com/axisparkjs/.github/blob/main/SECURITY.md).
+- 💬 Need help? See [Support](https://github.com/axisparkjs/.github/blob/main/SUPPORT.md).
 
 ## License
 
-AxiSpark is [Apache 2.0 licensed](LICENSE).
+AxiSpark.js is [Apache 2.0 licensed](https://github.com/axisparkjs/axispark/blob/main/LICENSE).
