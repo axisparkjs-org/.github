@@ -69,7 +69,9 @@ jobs:
 
       # The inputs are passed through environment variables, never interpolated
       # in the script, to avoid script injection.
+      # The configuration is passed inline: `config-file` only accepts files inside the workspace.
       - name: Generate CodeQL configuration
+        id: config
         env:
           QUERIES: ${{ inputs.queries }}
           PATHS_IGNORE: ${{ inputs.paths-ignore }}
@@ -89,13 +91,20 @@ jobs:
           } > "$CONFIG_FILE"
           cat "$CONFIG_FILE"
 
+          DELIMITER="CODEQL_CONFIG_$(openssl rand -hex 8)"
+          {
+            echo "config<<${DELIMITER}"
+            cat "$CONFIG_FILE"
+            echo "${DELIMITER}"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
           # JavaScript, TypeScript and GitHub Actions are analyzed without building the code.
           build-mode: none
-          config-file: ${{ runner.temp }}/codeql-config.yml
+          config: ${{ steps.config.outputs.config }}
 
       - name: Perform CodeQL analysis
         uses: github/codeql-action/analyze@v4
