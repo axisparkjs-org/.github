@@ -1,6 +1,6 @@
 # Analyzes the workflows of this repository, including the reusable ones
 # that other repositories of the organization call.
-name: CodeQL analysis
+name: CodeQL Analysis
 
 on:
   push:
@@ -9,8 +9,6 @@ on:
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '17 5 * * 1'
 
 concurrency:
   group: codeql-${{ github.ref }}
