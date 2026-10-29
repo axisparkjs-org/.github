@@ -1,0 +1,103 @@
+# Reusable CodeQL analysis for every repository in the AxiSpark.js organization.
+#
+# Usage from another repository:
+#
+#   jobs:
+#     codeql:
+#       uses: axisparkjs/.github/.github/workflows/codeql.yml@main
+#       permissions:
+#         actions: read
+#         contents: read
+#         packages: read
+#         security-events: write
+#       with:
+#         paths-ignore: |
+#           samples/**
+#
+# Do not enable CodeQL "default setup" in a repository that uses this workflow:
+# GitHub rejects analyses from advanced configurations while default setup is enabled.
+name: CodeQL
+
+on:
+  workflow_call:
+    inputs:
+      languages:
+        description: JSON array of CodeQL languages to analyze. Each language runs in its own job.
+        type: string
+        default: '["javascript-typescript", "actions"]'
+      queries:
+        description: Query suite to run (`default`, `security-extended` or `security-and-quality`).
+        type: string
+        default: security-extended
+      paths-ignore:
+        description: Glob patterns to exclude from the analysis, one per line.
+        type: string
+        default: ''
+      runs-on:
+        description: Runner used for the analysis jobs.
+        type: string
+        default: ubuntu-latest
+      timeout-minutes:
+        description: Maximum duration of each analysis job.
+        type: number
+        default: 30
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze (${{ matrix.language }})
+    runs-on: ${{ inputs.runs-on }}
+    timeout-minutes: ${{ inputs.timeout-minutes }}
+    permissions:
+      # Required to upload the results to Code scanning.
+      security-events: write
+      # Required to fetch CodeQL packs and to read workflow runs in private repositories.
+      actions: read
+      contents: read
+      packages: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ${{ fromJSON(inputs.languages) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      # The inputs are passed through environment variables, never interpolated
+      # in the script, to avoid script injection.
+      - name: Generate CodeQL configuration
+        env:
+          QUERIES: ${{ inputs.queries }}
+          PATHS_IGNORE: ${{ inputs.paths-ignore }}
+          CONFIG_FILE: ${{ runner.temp }}/codeql-config.yml
+        run: |
+          {
+            echo "name: AxiSpark.js CodeQL configuration"
+            echo "queries:"
+            echo "  - uses: \"${QUERIES}\""
+            if [ -n "$(echo "$PATHS_IGNORE" | tr -d '[:space:]')" ]; then
+              echo "paths-ignore:"
+              while IFS= read -r path; do
+                path="$(echo "$path" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+                if [ -n "$path" ]; then echo "  - \"${path}\""; fi
+              done <<< "$PATHS_IGNORE"
+            fi
+          } > "$CONFIG_FILE"
+          cat "$CONFIG_FILE"
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: ${{ matrix.language }}
+          # JavaScript, TypeScript and GitHub Actions are analyzed without building the code.
+          build-mode: none
+          config-file: ${{ runner.temp }}/codeql-config.yml
+
+      - name: Perform CodeQL analysis
+        uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:${{ matrix.language }}

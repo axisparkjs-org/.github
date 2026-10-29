@@ -1,0 +1,31 @@
+# Analyzes the workflows of this repository, including the reusable ones
+# that other repositories of the organization call.
+name: CodeQL analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '17 5 * * 1'
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  codeql:
+    uses: ./.github/workflows/codeql.yml
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
+    with:
+      languages: '["actions"]'

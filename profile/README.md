@@ -11,9 +11,9 @@
 </p>
 <div align="center">
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-0406BD?style=flat-square&labelColor=EBEDF0)](https://github.com/axisparkjs/axispark/blob/main/LICENSE)
-[![npm](https://img.shields.io/npm/v/@axisparkjs/core?style=flat-square&labelColor=EBEDF0&color=0406BD&label=npm)](https://www.npmjs.com/org/axisparkjs)
-[![Docs](https://img.shields.io/badge/Docs-axisparkjs.github.io-0406BD?style=flat-square&labelColor=EBEDF0)](https://axisparkjs.github.io/axispark/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-e4b94c?style=flat-square&labelColor=EBEDF0)](https://github.com/axisparkjs/axispark/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/@axisparkjs/core?style=flat-square&labelColor=EBEDF0&color=e4b94c&label=npm)](https://www.npmjs.com/org/axisparkjs)
+[![Docs](https://img.shields.io/badge/Docs-axisparkjs.github.io-e4b94c?style=flat-square&labelColor=EBEDF0)](https://axisparkjs.github.io/axispark/)
 
 </div>
 
