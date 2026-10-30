@@ -1,4 +1,4 @@
-![AxiSpark.js](https://axisparkjs.com/promo/promo.mp4)
+![](./promo.mp4)
 
 <p align="center" style="font-size: 40px; margin-bottom: 0; font-weight: bold;">
   AxiSpark.js
