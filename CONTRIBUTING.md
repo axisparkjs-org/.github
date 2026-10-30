@@ -44,6 +44,8 @@ For each issue, create a new branch from the `main` branch. Start the branch nam
 
 `release/` branches are reserved for maintainers to prepare releases.
 
+The documentation lives in its own repository, [axisparkjs/website](https://github.com/axisparkjs/website). A change that needs documentation is usually two pull requests: the code in its repository and the guides in `website`. Link them to each other. The API reference does not need a pull request in `website`, because it is generated from the TSDoc comments of the code.
+
 Make sure to regularly pull the latest changes from the `main` branch to keep your branch up to date.
 
 ### Commit Messages

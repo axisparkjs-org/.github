@@ -4,7 +4,7 @@ Thanks for using AxiSpark.js! Here is how to get help.
 
 ## Documentation
 
-Most questions are answered in the [official documentation](https://axisparkjs.github.io/axispark/), which includes getting started guides, plugin references and the API documentation. The [samples](https://github.com/axisparkjs/axispark/tree/main/samples) folder contains working examples of most features.
+Most questions are answered in the [official documentation](https://axisparkjs.com/), which includes getting started guides, plugin references and the API documentation. The [samples](https://github.com/axisparkjs/axispark/tree/main/samples) folder contains working examples of most features.
 
 ## Bugs and Feature Requests
 

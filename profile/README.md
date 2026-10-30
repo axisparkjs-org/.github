@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://axisparkjs.github.io/axispark/" target="_blank"><img src="https://axisparkjs.github.io/axispark/img/icon.svg" width="120" alt="AxiSpark.js Logo" /></a>
+  <a href="https://axisparkjs.com/" target="_blank"><img src="https://axisparkjs.com/img/icon.svg" width="120" alt="AxiSpark.js Logo" /></a>
 </p>
 
 <p align="center" style="font-size: 40px; margin-bottom: 0; font-weight: bold;">
@@ -13,7 +13,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-e4b94c?style=flat-square&labelColor=EBEDF0)](https://github.com/axisparkjs/axispark/blob/main/LICENSE)
 [![npm](https://img.shields.io/npm/v/@axisparkjs/core?style=flat-square&labelColor=EBEDF0&color=e4b94c&label=npm)](https://www.npmjs.com/org/axisparkjs)
-[![Docs](https://img.shields.io/badge/Docs-axisparkjs.github.io-e4b94c?style=flat-square&labelColor=EBEDF0)](https://axisparkjs.github.io/axispark/)
+[![Docs](https://img.shields.io/badge/Docs-axisparkjs.com-e4b94c?style=flat-square&labelColor=EBEDF0)](https://axisparkjs.com/)
 
 </div>
 
@@ -36,7 +36,7 @@ npm install -g @axisparkjs/cli
 axispark create my-app
 ```
 
-Then follow the [official documentation](https://axisparkjs.github.io/axispark/docs/intro).
+Then follow the [official documentation](https://axisparkjs.com/docs/intro).
 
 ## Packages
 
