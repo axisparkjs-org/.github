@@ -55,7 +55,8 @@ Everything is a plugin: install only what your application needs. All packages l
 
 | Repository | Description |
 | --- | --- |
-| [axispark](https://github.com/axisparkjs/axispark) | Framework packages, CLI templates, samples and documentation website. |
+| [axispark](https://github.com/axisparkjs/axispark) | Framework packages, CLI templates and samples. |
+| [website](https://github.com/axisparkjs/website) | Documentation website. |
 | [.github](https://github.com/axisparkjs/.github) | Organization profile, community health files and issue templates. |
 
 ## Contributing
