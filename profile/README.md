@@ -1,6 +1,4 @@
-<p align="center">
-  <a href="https://axisparkjs.com/" target="_blank"><img src="https://axisparkjs.com/img/icon.svg" width="120" alt="AxiSpark.js Logo" /></a>
-</p>
+![AxiSpark.js](https://axisparkjs.com/promo/promo.mp4)
 
 <p align="center" style="font-size: 40px; margin-bottom: 0; font-weight: bold;">
   AxiSpark.js
